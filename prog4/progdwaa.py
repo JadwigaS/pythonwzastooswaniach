@@ -71,6 +71,7 @@ images = []
 #s=stan()
 #print(s.a)
 ile=args.n*args.n
+et=time.time()
 for j in track(range(args.l),description="makroki postęp"):
  # if j%10==0:
    if args.ob:
@@ -116,6 +117,7 @@ for j in track(range(args.l),description="makroki postęp"):
   
  # print(s.mag())
 #print(s.a)
+bt=time.time()
 if args.anim:
    an=np.uint8(a+1)
    an=an*255
@@ -124,3 +126,9 @@ if args.anim:
    images[0].save(args.anim,save_all=True,append_images=images, optimize=False, duration=2, loop=0)
 if f!=1:
   f.close()
+ct=time.time()
+
+print("czas wykonania ="+ str(bt-et) )
+print("zapis animacji =" + str(ct-bt))
+
+## dla paramatrów  n=100 l=1000 t_wyk = 50.11628794670105, bez numby t= 245.12046813964844

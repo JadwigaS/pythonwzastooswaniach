@@ -65,6 +65,7 @@ images = []
 s=stan()
 #print(s.a)
 ile=args.n*args.n
+et=time.time()
 for j in track(range(args.l),description="makroki postęp"):
  # if j%10==0:
    if args.ob:
@@ -110,6 +111,8 @@ for j in track(range(args.l),description="makroki postęp"):
   
  # print(s.mag())
 #print(s.a)
+bt=time.time()
+print(bt-et)
 if args.anim:
    a=np.uint8(s.a+1)
    a=a*255

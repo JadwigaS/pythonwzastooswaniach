@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "prog8"
+version = "0.1.0"
+description = ""
+authors = ["JadwigaS <80515572+JadwigaS@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.26.3"
+matplotlib = "^3.8.2"
+sympy = "^1.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
