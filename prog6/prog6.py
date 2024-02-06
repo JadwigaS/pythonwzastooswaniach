@@ -26,7 +26,7 @@ spells=[]
 for results in main_div.find_elements(By.CSS_SELECTOR, 'h2,u'):
     #print(results.tag_name)
     spells.append(results.text.strip())
-    print('------------------')
+    #print('------------------')
 
 element = driver.find_element(By.LINK_TEXT, "Divine")
 element.click()
@@ -34,7 +34,7 @@ main_div = driver.find_element(By.CLASS_NAME, 'main')
 for results in main_div.find_elements(By.CSS_SELECTOR, 'h2,u'):
     #print(results.tag_name)
     spells.append(results.text.strip())
-    print('------------------')
+    #print('------------------')
 
 #time.sleep(1000)
 driver.close()
