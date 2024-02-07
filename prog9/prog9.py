@@ -20,8 +20,8 @@ def diff(N,t,params):
     B,y = params
     derivs=[S_model(S,t,B,I),R_model(I,t,y),I_model(S,t,B,I,y)]
     return derivs
-beta = Slider(start=0, end=1, value=0.5, step=0.005, title='beta', width=200)
-gamma = Slider(start=0, end=1, value=0.5, step=0.005, title='gamma', width=200)
+beta = Slider(start=0, end=1, value=0.5, step=0.001, title='beta', width=200, format = '0.000')
+gamma = Slider(start=0, end=1, value=0.5, step=0.001, title='gamma', width=200, format = '0.000')
 fig = figure(
     #sizing_mode='stretch_width',
     width=800,
@@ -35,10 +35,10 @@ fig.toolbar.logo = None
 fig.toolbar.autohide = True
 B=beta.value
 y=gamma.value
-t = np.linspace(0, 20, 1000)
+t = np.linspace(0, 30, 300)
 S0=100
 R0=0
-I0=10
+I0=5
 params=[B,y]
 N0=[S0,R0,I0]
 solved= odeint(diff,N0,t,args=(params,))
@@ -52,12 +52,12 @@ sw=fig.line( x='x_values', y='y_values',source=sources, color='green', legend_la
 rw=fig.line(x='x_values', y='y_values',source=sourcer, color='black', legend_label='R', line_width=3)
 iw=fig.line(x='x_values', y='y_values',source=sourcei, color='red', legend_label='I', line_width=3)
 def update(attr, old, new):
-    t = np.linspace(0, 20, 1000)
+    t = np.linspace(0, 30, 300)
     B=beta.value
     y=gamma.value
     S0=100
     R0=0
-    I0=10
+    I0=5
     params=[B,y]
     N0=[S0,R0,I0]
     solved= odeint(diff,N0,t,args=(params,))
